@@ -1,0 +1,17 @@
+paths:
+  /api/sessions/producto:
+    get:
+      summary: Obtiene todos los productos
+      tags:
+        - Productos
+      responses:
+        "200":
+          description: "Lista de productos"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#components/schemas/Product'
+        "500":
+          description: "Error interno del servidor"
