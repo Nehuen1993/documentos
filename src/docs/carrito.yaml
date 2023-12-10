@@ -3,7 +3,7 @@ paths:
     get:
       summary: Obtiene todos los productos
       tags:
-        - Ver Carrito
+        - Carrito
       parameters:
         - in: path
           name: userId
@@ -27,7 +27,7 @@ paths:
     post:
       summary: Agrega un producto al carrito
       tags:
-        - Agregar al carrito
+        - Carrito
       requestBody:
         description: Datos del producto a agregar al carrito
         required: true
@@ -62,7 +62,7 @@ paths:
     post:
       summary: Enviar correo de compra
       tags:
-        - Envia correo de compra
+        - Carrito
       parameters:
         - in: path
           name: userId

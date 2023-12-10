@@ -9,7 +9,9 @@ export const getProducto = async(req, res) => {
                 return res.redirect("login")
             }
         
-            const { first_name, last_name, email, age, isAdmin, _id, telefono} = req.session.user
+            const { first_name, last_name, email, age, isAdmin, telefono} = req.session.user
+
+            
             try {
                
                 const products= await productos.find();
@@ -90,12 +92,13 @@ export const postAgregar = async (req, res) => {
                 res.send({ status: "error", error: "Faltan datos" });
               
                 return;
+
               }
           
               const result = await productos.updateOne({ _id: id }, { nombre, categoria, precio, stock, imagen });
               
           
-              res.status(200).send({ status: 'success', message: 'Producto eliminado con éxito' });
+              res.status(200).send({ status: 'success', message: 'Producto actualizado con éxito' });
             } catch (error) {
               console.log(error);
               res.status(500).send({ status: "error", error: "Error al actualizar el producto" });
